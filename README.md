@@ -52,7 +52,7 @@ Third party components
 ----------------------
 
 - [build script](https://github.com/AdoptOpenJDK/openjdk-build) provided by [AdoptOpenJDK](https://adoptopenjdk.net/) is used.
-- [OpenJDK11 source code](https://github.com/AdoptOpenJDK/openjdk-jdk11) provided by [AdoptOpenJDK](https://adoptopenjdk.net/)
+- [OpenJDK11 source code](https://github.com/AdoptOpenJDK/openjdk-jdk11u) provided by [AdoptOpenJDK](https://adoptopenjdk.net/)
 - [OpenJDK10 package for Linux x86](https://cdn.azul.com/zulu/bin/zulu10.3+5-jdk10.0.2-linux_i686.tar.gz) provided by [Azul Systems](https://www.azul.com/) (used for bootstrapping)
 
 
