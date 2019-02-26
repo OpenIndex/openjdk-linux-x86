@@ -55,3 +55,11 @@ Third party components
 - [OpenJDK11 source code](https://github.com/AdoptOpenJDK/openjdk-jdk11) provided by [AdoptOpenJDK](https://adoptopenjdk.net/)
 - [OpenJDK10 package for Linux x86](https://cdn.azul.com/zulu/bin/zulu10.3+5-jdk10.0.2-linux_i686.tar.gz) provided by [Azul Systems](https://www.azul.com/) (used for bootstrapping)
 
+
+What about OpenJDK 8 for Linux x86?
+-----------------------------------
+
+We're not intending to provide OpenJDK 8 for Linux x86 here, because others are already covering this:
+
+- [Liberica JDK](https://www.bell-sw.com/) by BellSoft
+- [Zulu Linux](https://www.azul.com/downloads/zulu/zulu-linux/) by Azul Systems
