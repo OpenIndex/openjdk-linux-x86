@@ -34,7 +34,8 @@ if [[ ! -d "${BOOTSTRAP_JDK}" ]] ; then
 fi
 
 # Update git submodule for openjdk-build by AdoptOpenJDK.
-git submodule update
+cd "${DIR}/openjdk-build"
+git submodule update --init --recursive
 
 # Build OpenJDK.
 cd "${DIR}/openjdk-build"
