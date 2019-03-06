@@ -1,13 +1,13 @@
-OpenJDK for Linux x86 (IA-32)
-=============================
+OpenJDK 12 for Linux x86 (IA-32)
+================================
 
-This repository provides custom builds of the latest OpenJDK for Linux x86 (aka [IA-32](https://en.wikipedia.org/wiki/IA-32)) created with the build scripts by [AdoptOpenJDK](https://github.com/AdoptOpenJDK/openjdk-build). Created binaries are available at the [release page](https://github.com/OpenIndex/openjdk-linux-x86/releases).
+This repository provides builds of OpenJDK 12 for Linux x86 (aka [IA-32](https://en.wikipedia.org/wiki/IA-32)) created with the build scripts by [AdoptOpenJDK](https://github.com/AdoptOpenJDK/openjdk-build). Compiled binaries are available at the [release page](https://github.com/OpenIndex/openjdk-linux-x86/releases).
 
 
 Motivation
 ----------
 
-Unfortunately AdoptOpenJDK does not provide binaries of OpenJDK for Linux x86 yet. It seems to be planned according to [this issue](https://github.com/AdoptOpenJDK/openjdk-build/issues/774) but we don't really know, when the package will become available on [their website](https://adoptopenjdk.net/).
+Unfortunately AdoptOpenJDK does not provide binaries of OpenJDK 12 for Linux x86 yet. It seems to be planned according to [this issue](https://github.com/AdoptOpenJDK/openjdk-build/issues/774) but we don't really know, when the package will become available on [their website](https://adoptopenjdk.net/).
 
 One might ask, if this old architecture is still relevant today on Linux. Of course it's highly recommended to use x86-64, if the system supports it. But x86 is still being used and according to the philosophy of open source software, we should try to keep compatibility to older systems for as long as possible:
 
@@ -46,15 +46,15 @@ OpenJDK is compiled by calling the `build.sh` script. After the script was succe
 Word of warning
 ---------------
 
-We've tested the provided binaries against our applications. Therefore they **should** work. But we can't fully guarantee, that the provided binaries work properly in any use case. Also we can't provide any support for the provided binaries.
+We've tested the provided binaries with our applications. Therefore they **should** work. But we can't fully guarantee, that the provided binaries work properly in any use case. Also we can't give any support for the provided binaries.
 
 
 Third party components
 ----------------------
 
-- [build script](https://github.com/AdoptOpenJDK/openjdk-build) provided by [AdoptOpenJDK](https://adoptopenjdk.net/)
-- [OpenJDK12 source code](https://github.com/AdoptOpenJDK/openjdk-jdk12u) provided by [AdoptOpenJDK](https://adoptopenjdk.net/)
-- [OpenJDK11 package for Linux x86](https://github.com/OpenIndex/openjdk-linux-x86/releases/download/jdk-11.0.2%2B9/jdk-11.0.2+9-linux-x86.tar.gz) provided by [OpenIndex](https://github.com/OpenIndex/openjdk-linux-x86/tree/jdk11) (used for bootstrapping)
+- [build scripts](https://github.com/AdoptOpenJDK/openjdk-build) provided by [AdoptOpenJDK](https://adoptopenjdk.net/)
+- [OpenJDK 12 source code](https://github.com/AdoptOpenJDK/openjdk-jdk12u) provided by [AdoptOpenJDK](https://adoptopenjdk.net/)
+- [OpenJDK 11 package for Linux x86](https://github.com/OpenIndex/openjdk-linux-x86/releases/download/jdk-11.0.2%2B9/jdk-11.0.2+9-linux-x86.tar.gz) provided by [OpenIndex](https://github.com/OpenIndex/openjdk-linux-x86/tree/jdk11) (used for bootstrapping)
 
 
 What about OpenJDK 8 for Linux x86?
