@@ -15,8 +15,10 @@
 # limitations under the License.
 #
 
-OPENJDK_VERSION="jdk11u"
-OPENJDK_TAG="jdk-11.0.2+9"
+OPENJDK_VERSION="jdk12u"
+OPENJDK_TAG="jdk-12+30"
+OPENJDK_CONFIGURE_ARGS=""
+#OPENJDK_CONFIGURE_ARGS="--disable-warnings-as-errors"
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 TARGET_DIR="${DIR}/package"
@@ -27,10 +29,17 @@ TARGET_FILE_JRE="${OPENJDK_TAG}-jre-linux-x86.tar.gz"
 rm -Rf "${TARGET_DIR}"
 
 # Extract Bootstrap JDK.
-BOOTSTRAP_JDK="${DIR}/bootstrap/zulu10.3+5-jdk10.0.2-linux_i686"
+BOOTSTRAP_JDK="${DIR}/bootstrap/jdk-11.0.2+9"
+BOOTSTRAP_JDK_URL="https://github.com/OpenIndex/openjdk-linux-x86/releases/download/jdk-11.0.2%2B9/jdk-11.0.2+9-linux-x86.tar.gz"
+if [[ ! -d "${DIR}/bootstrap" ]] ; then
+  mkdir "${DIR}/bootstrap"
+fi
 if [[ ! -d "${BOOTSTRAP_JDK}" ]] ; then
   cd "${DIR}/bootstrap"
-  cat zulu10.3+5-jdk10.0.2-linux_i686.tar.gz-* | tar xz
+  if [[ ! -f "${DIR}/$(basename "${BOOTSTRAP_JDK_URL}")" ]] ; then
+    curl -L -o "$(basename ${BOOTSTRAP_JDK_URL})" "${BOOTSTRAP_JDK_URL}"
+  fi
+  tar xfz "$(basename "${BOOTSTRAP_JDK_URL}")"
 fi
 
 # Update git submodule for openjdk-build by AdoptOpenJDK.
@@ -43,7 +52,7 @@ cd "${DIR}/openjdk-build"
   --jdk-boot-dir "${BOOTSTRAP_JDK}" \
   --tag "${OPENJDK_TAG}" \
   --use-jep319-certs \
-  --configure-args "--disable-warnings-as-errors" \
+  --configure-args "${OPENJDK_CONFIGURE_ARGS}" \
   "${OPENJDK_VERSION}"
 
 # Copy created images into target directory.

@@ -53,8 +53,8 @@ Third party components
 ----------------------
 
 - [build script](https://github.com/AdoptOpenJDK/openjdk-build) provided by [AdoptOpenJDK](https://adoptopenjdk.net/)
-- [OpenJDK11 source code](https://github.com/AdoptOpenJDK/openjdk-jdk11u) provided by [AdoptOpenJDK](https://adoptopenjdk.net/)
-- [OpenJDK10 package for Linux x86](https://cdn.azul.com/zulu/bin/zulu10.3+5-jdk10.0.2-linux_i686.tar.gz) provided by [Azul Systems](https://www.azul.com/) (used for bootstrapping)
+- [OpenJDK12 source code](https://github.com/AdoptOpenJDK/openjdk-jdk12u) provided by [AdoptOpenJDK](https://adoptopenjdk.net/)
+- [OpenJDK11 package for Linux x86](https://github.com/OpenIndex/openjdk-linux-x86/releases/download/jdk-11.0.2%2B9/jdk-11.0.2+9-linux-x86.tar.gz) provided by [OpenIndex](https://github.com/OpenIndex/openjdk-linux-x86/tree/jdk11) (used for bootstrapping)
 
 
 What about OpenJDK 8 for Linux x86?
