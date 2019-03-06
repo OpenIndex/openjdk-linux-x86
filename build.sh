@@ -47,7 +47,8 @@ cd "${DIR}/openjdk-build"
   "${OPENJDK_VERSION}"
 
 # Copy created images into target directory.
-IMAGE_DIR="${DIR}/openjdk-build/workspace/build/src/build/linux-x86-normal-server-release/images"
+IMAGE_NAME="$( ls -1 "${DIR}/openjdk-build/workspace/build/src/build" )"
+IMAGE_DIR="${DIR}/openjdk-build/workspace/build/src/build/${IMAGE_NAME}/images"
 mkdir -p "${TARGET_DIR}"
 if [[ -d "${IMAGE_DIR}/${OPENJDK_TAG}" ]] ; then
   cd "${IMAGE_DIR}"
