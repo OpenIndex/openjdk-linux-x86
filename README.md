@@ -1,13 +1,13 @@
 OpenJDK for Linux x86 (IA-32)
 =============================
 
-This repository provides a custom build of OpenJDK 11 for Linux x86 (aka [IA-32](https://en.wikipedia.org/wiki/IA-32)) created with the build scripts by [AdoptOpenJDK](https://github.com/AdoptOpenJDK/openjdk-build). Created binaries are available at the [release page](https://github.com/OpenIndex/openjdk-linux-x86/releases).
+This repository provides custom builds of the latest OpenJDK for Linux x86 (aka [IA-32](https://en.wikipedia.org/wiki/IA-32)) created with the build scripts by [AdoptOpenJDK](https://github.com/AdoptOpenJDK/openjdk-build). Created binaries are available at the [release page](https://github.com/OpenIndex/openjdk-linux-x86/releases).
 
 
 Motivation
 ----------
 
-Unfortunately AdoptOpenJDK does not provide binaries of OpenJDK 11 for Linux x86 yet. It seems to be planned according to [this issue](https://github.com/AdoptOpenJDK/openjdk-build/issues/774) but we don't really know, when the package will become available on [their website](https://adoptopenjdk.net/).
+Unfortunately AdoptOpenJDK does not provide binaries of OpenJDK for Linux x86 yet. It seems to be planned according to [this issue](https://github.com/AdoptOpenJDK/openjdk-build/issues/774) but we don't really know, when the package will become available on [their website](https://adoptopenjdk.net/).
 
 One might ask, if this old architecture is still relevant today on Linux. Of course it's highly recommended to use x86-64, if the system supports it. But x86 is still being used and according to the philosophy of open source software, we should try to keep compatibility to older systems for as long as possible:
 
@@ -33,6 +33,7 @@ apt install \
   libfontconfig1-dev \
   libx11-dev \
   libxext-dev \
+  libxrandr-dev \
   libxrender-dev \
   libxt-dev \
   libxtst-dev \
@@ -45,7 +46,7 @@ OpenJDK is compiled by calling the `build.sh` script. After the script was succe
 Word of warning
 ---------------
 
-This is an experimental build. We've made some tests on our side. But we can't guarantee it to work properly and we can't provide any support for it. Any feedback or improvement is welcome.
+We've tested the provided binaries against our applications. Therefore they **should** work. But we can't fully guarantee, that the provided binaries work properly in any use case. Also we can't provide any support for the provided binaries.
 
 
 Third party components
