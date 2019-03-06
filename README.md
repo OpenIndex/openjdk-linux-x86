@@ -1,7 +1,7 @@
-OpenJDK for Linux x86 (IA-32)
-=============================
+OpenJDK 11 for Linux x86 (IA-32)
+================================
 
-This repository provides a custom build of OpenJDK 11 for Linux x86 (aka [IA-32](https://en.wikipedia.org/wiki/IA-32)) created with the build scripts by [AdoptOpenJDK](https://github.com/AdoptOpenJDK/openjdk-build). Created binaries are available at the [release page](https://github.com/OpenIndex/openjdk-linux-x86/releases).
+This repository provides builds of OpenJDK 11 for Linux x86 (aka [IA-32](https://en.wikipedia.org/wiki/IA-32)) created with the build scripts by [AdoptOpenJDK](https://github.com/AdoptOpenJDK/openjdk-build). Compiled binaries are available at the [release page](https://github.com/OpenIndex/openjdk-linux-x86/releases).
 
 
 Motivation
@@ -33,6 +33,7 @@ apt install \
   libfontconfig1-dev \
   libx11-dev \
   libxext-dev \
+  libxrandr-dev \
   libxrender-dev \
   libxt-dev \
   libxtst-dev \
@@ -45,15 +46,15 @@ OpenJDK is compiled by calling the `build.sh` script. After the script was succe
 Word of warning
 ---------------
 
-This is an experimental build. We've made some tests on our side. But we can't guarantee it to work properly and we can't provide any support for it. Any feedback or improvement is welcome.
+We've tested the provided binaries with our applications. Therefore they **should** work. But we can't fully guarantee, that the provided binaries work properly in any use case. Also we can't give any support for the provided binaries.
 
 
 Third party components
 ----------------------
 
-- [build script](https://github.com/AdoptOpenJDK/openjdk-build) provided by [AdoptOpenJDK](https://adoptopenjdk.net/)
-- [OpenJDK11 source code](https://github.com/AdoptOpenJDK/openjdk-jdk11u) provided by [AdoptOpenJDK](https://adoptopenjdk.net/)
-- [OpenJDK10 package for Linux x86](https://cdn.azul.com/zulu/bin/zulu10.3+5-jdk10.0.2-linux_i686.tar.gz) provided by [Azul Systems](https://www.azul.com/) (used for bootstrapping)
+- [build scripts](https://github.com/AdoptOpenJDK/openjdk-build) provided by [AdoptOpenJDK](https://adoptopenjdk.net/)
+- [OpenJDK 11 source code](https://github.com/AdoptOpenJDK/openjdk-jdk11u) provided by [AdoptOpenJDK](https://adoptopenjdk.net/)
+- [OpenJDK 10 package for Linux x86](https://cdn.azul.com/zulu/bin/zulu10.3+5-jdk10.0.2-linux_i686.tar.gz) provided by [Azul Systems](https://www.azul.com/) (used for bootstrapping)
 
 
 What about OpenJDK 8 for Linux x86?

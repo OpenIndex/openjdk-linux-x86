@@ -17,6 +17,8 @@
 
 OPENJDK_VERSION="jdk11u"
 OPENJDK_TAG="jdk-11.0.2+9"
+#OPENJDK_CONFIGURE_ARGS=""
+OPENJDK_CONFIGURE_ARGS="--disable-warnings-as-errors"
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 TARGET_DIR="${DIR}/package"
@@ -43,11 +45,12 @@ cd "${DIR}/openjdk-build"
   --jdk-boot-dir "${BOOTSTRAP_JDK}" \
   --tag "${OPENJDK_TAG}" \
   --use-jep319-certs \
-  --configure-args "--disable-warnings-as-errors" \
+  --configure-args "${OPENJDK_CONFIGURE_ARGS}" \
   "${OPENJDK_VERSION}"
 
 # Copy created images into target directory.
-IMAGE_DIR="${DIR}/openjdk-build/workspace/build/src/build/linux-x86-normal-server-release/images"
+IMAGE_NAME="$( ls -1 "${DIR}/openjdk-build/workspace/build/src/build" )"
+IMAGE_DIR="${DIR}/openjdk-build/workspace/build/src/build/${IMAGE_NAME}/images"
 mkdir -p "${TARGET_DIR}"
 if [[ -d "${IMAGE_DIR}/${OPENJDK_TAG}" ]] ; then
   cd "${IMAGE_DIR}"
