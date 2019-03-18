@@ -16,7 +16,7 @@
 #
 
 OPENJDK_VERSION="jdk12u"
-OPENJDK_TAG="jdk-12+30"
+OPENJDK_TAG="jdk-12+33"
 OPENJDK_CONFIGURE_ARGS=""
 #OPENJDK_CONFIGURE_ARGS="--disable-warnings-as-errors"
 
