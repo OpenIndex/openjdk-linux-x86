@@ -27,6 +27,7 @@ The following packages had to be installed in order to build the OpenJDK package
 apt install \
   autoconf \
   curl \
+  file \
   git \
   libasound2-dev \
   libcups2-dev \
@@ -37,6 +38,8 @@ apt install \
   libxrender-dev \
   libxt-dev \
   libxtst-dev \
+  unzip \
+  wget \
   zip
 ```
 
