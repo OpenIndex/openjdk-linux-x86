@@ -19,12 +19,12 @@ One might ask, if this old architecture is still relevant today on Linux. Of cou
 How to build
 ------------
 
-The [provided binaries](https://github.com/OpenIndex/openjdk-linux-x86/releases) were created on a virtual machine using [Debian](https://www.debian.org/) stable for i386. Of course you might also use other build environments.
+The [provided binaries](https://github.com/OpenIndex/openjdk-linux-x86/releases) were created on a virtual machine using [Debian](https://www.debian.org/) stable for **i386**. Of course you might also use other build environments.
 
 The following packages had to be installed in order to build the OpenJDK packages:
 
 ```bash
-apt install \
+sudo apt install \
   autoconf \
   curl \
   file \
@@ -43,7 +43,65 @@ apt install \
   zip
 ```
 
-OpenJDK is compiled by calling the `build.sh` script. After the script was succefully executed you can find the created packages in the created `package` subfolder.
+OpenJDK is compiled by calling the `build.sh` script. After the script was successfully executed you can find the created packages in the created `package` subfolder.
+
+
+### Build on x86-64 systems with Docker
+
+You may build OpenJDK for Linux x86 on a x86-64 system with Docker. The [openjdk-linux-x86-docker](https://github.com/OpenIndex/openjdk-linux-x86-docker) repository contains the required files and documentation.
+
+
+### Build on x86-64 systems natively
+
+You may build OpenJDK for Linux x86 on a x86-64 system natively. On Debian **amd64** the following steps are required:
+
+-   Register the **i386** architecture via:
+
+    ```bash
+    sudo dpkg --add-architecture i386
+    sudo apt update
+    ```
+
+-   Besides the packages mentioned above you need to install some additional packages:
+
+    ```bash
+    sudo apt install \
+      g++-multilib \
+      gcc-6-base:i386 \
+      libasound2-dev:i386 \
+      libc6:i386 \
+      libc6-i386 \
+      libc6-dev-i386 \
+      libcups2-dev:i386 \
+      libgcc1:i386 \
+      libfontconfig1-dev:i386 \
+      libx11-dev:i386 \
+      libxext-dev:i386 \
+      libxrandr-dev:i386 \
+      libxrender-dev:i386 \
+      libxt-dev:i386 \
+      libxtst-dev:i386 \
+      zlib1g-dev:i386
+    ```
+
+-   After cloning this repository you need to update the `prepareWorkspace.sh` script by AdoptOpenJDK in order to enforce a 32bit build of the Freetype library.
+
+    ```bash
+    cd "openjdk-build"
+    git submodule update --init --recursive
+    sed -i.bak 's|if ! (bash ./configure |if ! (CC="gcc -m32" bash ./configure |' \
+        "sbin/prepareWorkspace.sh"
+    ```
+
+    This updates the [Freetype compilation in `prepareWorkspace.sh`](https://github.com/AdoptOpenJDK/openjdk-build/blob/e8d4621ae2aff0e89b6dabd4bf802fc2ac8077d5/sbin/prepareWorkspace.sh#L229) accordingly.
+
+-   Start the build script from this repository with:
+
+    ```bash
+    /usr/bin/linux32 -- ./build.sh
+    ```
+
+    After the script was successfully executed you can find the created packages in the created `package` subfolder.
 
 
 Word of warning
