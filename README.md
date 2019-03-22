@@ -93,7 +93,7 @@ You may build OpenJDK for Linux x86 on a x86-64 system natively. On Debian **amd
         "sbin/prepareWorkspace.sh"
     ```
 
-    This updates the [Freetype compilation in `prepareWorkspace.sh`](https://github.com/AdoptOpenJDK/openjdk-build/blob/e8d4621ae2aff0e89b6dabd4bf802fc2ac8077d5/sbin/prepareWorkspace.sh#L229) accordingly.
+    This updates the [Freetype compilation in `prepareWorkspace.sh`](https://github.com/AdoptOpenJDK/openjdk-build/blob/a4320d29e3567f580923339a2f0d009cd2a8b0e5/sbin/prepareWorkspace.sh#L229) accordingly.
 
 -   Start the build script from this repository with:
 
