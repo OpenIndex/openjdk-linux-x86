@@ -16,7 +16,8 @@
 #
 
 OPENJDK_VERSION="jdk11u"
-OPENJDK_TAG="jdk-11.0.2+9"
+OPENJDK_TAG="jdk-11.0.3+6"
+OPENJDK_NAME="jdk-11.0.3"
 #OPENJDK_CONFIGURE_ARGS=""
 OPENJDK_CONFIGURE_ARGS="--disable-warnings-as-errors"
 
@@ -52,14 +53,14 @@ cd "${DIR}/openjdk-build"
 IMAGE_NAME="$( ls -1 "${DIR}/openjdk-build/workspace/build/src/build" )"
 IMAGE_DIR="${DIR}/openjdk-build/workspace/build/src/build/${IMAGE_NAME}/images"
 mkdir -p "${TARGET_DIR}"
-if [[ -d "${IMAGE_DIR}/${OPENJDK_TAG}" ]] ; then
+if [[ -d "${IMAGE_DIR}/${OPENJDK_NAME}" ]] ; then
   cd "${IMAGE_DIR}"
   echo "Copy JDK image to ${TARGET_DIR}/${TARGET_FILE_JDK}"
-  tar cfz "${TARGET_DIR}/${TARGET_FILE_JDK}" "${OPENJDK_TAG}"
+  tar cfz "${TARGET_DIR}/${TARGET_FILE_JDK}" "${OPENJDK_NAME}"
 fi
 
-if [[ -d "${IMAGE_DIR}/${OPENJDK_TAG}-jre" ]] ; then
+if [[ -d "${IMAGE_DIR}/${OPENJDK_NAME}-jre" ]] ; then
   cd "${IMAGE_DIR}"
   echo "Copy JRE image to ${TARGET_DIR}/${TARGET_FILE_JRE}"
-  tar cfz "${TARGET_DIR}/${TARGET_FILE_JRE}" "${OPENJDK_TAG}-jre"
+  tar cfz "${TARGET_DIR}/${TARGET_FILE_JRE}" "${OPENJDK_NAME}-jre"
 fi

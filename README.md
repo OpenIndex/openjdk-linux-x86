@@ -84,17 +84,6 @@ You may build OpenJDK for Linux x86 on a x86-64 system natively. On Debian **amd
       zlib1g-dev:i386
     ```
 
--   After cloning this repository you need to update the `prepareWorkspace.sh` script by AdoptOpenJDK in order to enforce a 32bit build of the Freetype library.
-
-    ```bash
-    cd "openjdk-build"
-    git submodule update --init --recursive
-    sed -i.bak 's|if ! (bash ./configure |if ! (CC="gcc -m32" bash ./configure |' \
-        "sbin/prepareWorkspace.sh"
-    ```
-
-    This updates the [Freetype compilation in `prepareWorkspace.sh`](https://github.com/AdoptOpenJDK/openjdk-build/blob/e8d4621ae2aff0e89b6dabd4bf802fc2ac8077d5/sbin/prepareWorkspace.sh#L229) accordingly.
-
 -   Start the build script from this repository with:
 
     ```bash
