@@ -4,6 +4,12 @@ OpenJDK 11 for Linux x86 (IA-32)
 This repository provides builds of OpenJDK 11 for Linux x86 (aka [IA-32](https://en.wikipedia.org/wiki/IA-32)) created with the build scripts by [AdoptOpenJDK](https://github.com/AdoptOpenJDK/openjdk-build). Compiled binaries are available at the [release page](https://github.com/OpenIndex/openjdk-linux-x86/releases).
 
 
+Important Notice
+----------------
+
+Since version 11.0.3 [Bell Soft](https://www.bell-sw.com/) provides binary packages of OpenJDK 11 for Linux x86. Therefore this repository is not necessary anymore and won't receive any further updates on OpenJDK 11.
+
+
 Motivation
 ----------
 
